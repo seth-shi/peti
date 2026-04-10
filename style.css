@@ -43,6 +43,8 @@ body::before {
   padding: 0 16px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .card {
@@ -300,7 +302,14 @@ h1, h2 {
     margin: 0;
     max-width: 100%;
     min-height: 100dvh;
-    padding: calc(env(safe-area-inset-top, 0px) + 10px) 12px calc(env(safe-area-inset-bottom, 0px) + 10px);
+    padding: calc(env(safe-area-inset-top, 0px) + 10px) 12px calc(env(safe-area-inset-bottom, 0px) + 24px);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    margin-top: auto;
+    margin-bottom: 0;
   }
 
   .card {
@@ -385,11 +394,17 @@ h1, h2 {
 
 .footer {
   text-align: center;
-  padding: 16px;
+  padding: 12px;
   font-size: 14px;
   color: var(--muted);
-  margin-top: 24px;
-  margin-bottom: 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 247, 251, 0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--line);
+  z-index: 10;
 }
 
 .footer p {
@@ -403,5 +418,7 @@ body {
 }
 
 .app {
-  margin-bottom: 0;
+  margin-bottom: 60px; /* 为固定的footer留出空间 */
+  box-sizing: border-box;
+  width: 100%;
 }
