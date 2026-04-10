@@ -382,3 +382,26 @@ h1, h2 {
     transform: translateX(0);
   }
 }
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* 确保页面不会出现滚动条 */
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.app {
+  margin-bottom: 0;
+}
