@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>宠物人格测试 Demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="card" id="startCard">
+      <header class="card-header">
+        <p class="badge">PET-SBTI</p>
+        <h1>MBTI 已经过时，宠物 PETI 来了。</h1>
+        <p class="sub">30 题测完才放行。世界已经够乱了，先把题做完整。</p>
+        <p class="sub">策划：Lily  新新 同学</p>
+        <p class="sub">开发：鹏同学  健同学</p>
+      </header>
+      <div class="actions start-actions">
+        <button id="startBtn" class="btn">开始测试</button>
+      </div>
+    </section>
+
+    <section class="card hidden" id="quizCard">
+      <header class="card-header">
+        <p class="badge">答题中</p>
+        <h1>你家宠物人格测试</h1>
+        <p class="sub">全选完才会放行。别急，先答题。</p>
+      </header>
+
+      <div class="progress-wrap">
+        <div class="progress-text">
+          <span id="currentIndex">1</span> / <span id="totalCount">30</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-inner" id="progressInner"></div>
+        </div>
+        <p id="gateTip" class="gate-tip">全选完才会放行。</p>
+      </div>
+
+      <section id="questionSection" class="question-section">
+        <h2 id="questionText"></h2>
+        <div id="options" class="options"></div>
+      </section>
+
+      <footer class="actions quiz-actions">
+        <button id="homeBtn" class="btn ghost">返回首页</button>
+        <button id="prevBtn" class="btn ghost">上一题</button>
+        <button id="nextBtn" class="btn">下一题</button>
+      </footer>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <header class="card-header">
+        <p class="badge hot">测试结果</p>
+        <h2>怎么样，被我拿捏了吧？</h2>
+      </header>
+      <section class="result-main">
+        <img id="resultIcon" class="result-icon" src="./icon/clingy.svg" alt="人格图标" />
+        <p class="label">你的主人格</p>
+        <p id="resultTitle" class="result-title"></p>
+        <p id="resultTag" class="result-tag"></p>
+        <p id="resultMatch" class="result-match"></p>
+        <div class="match-meter">
+          <div id="matchFill" class="match-fill"></div>
+        </div>
+      </section>
+      <article id="resultDesc" class="result-desc"></article>
+      <section class="notice">
+        <p class="label">友情提示</p>
+        <p>本测试仅供娱乐。仅表示对宠物的爱，请勿把它当成医学、心理学、相学、命理学或灵异学依据。</p>
+      </section>
+      <section class="notice">
+        <p class="label">作者的话</p>
+        <p>一群人学习了SBTI的创意，想到了可以做一个宠物PETI 在美好4月的周五晚上供大家娱乐下，表达对宠物的喜爱，娱乐为主请勿用于商业广告盈利。感谢分享参与测试的小伙伴。</p>
+      </section>
+      <p id="shareCopy" class="share-copy"></p>
+      <div class="actions result-actions">
+        <button id="copyBtn" class="btn">复制分享文案</button>
+        <button id="restartBtn" class="btn ghost">重新测试</button>
+        <button id="backHomeBtn" class="btn ghost">回到首页</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="./data/result-copy.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
